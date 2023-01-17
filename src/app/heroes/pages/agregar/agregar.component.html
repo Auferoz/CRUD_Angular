@@ -25,14 +25,14 @@
             <input matInput type="text" [(ngModel)]="heroe.last_dayplay" required>
         </mat-form-field>
 
-        <!-- <mat-form-field fxFlex="100">
-            <mat-label>Creador</mat-label>
-            <mat-select [(ngModel)]="heroe.publisher" required>
-                <mat-option *ngFor="let publisher of publishers" [value]="publisher.id">
-                    {{publisher.desc}}
+        <mat-form-field fxFlex="100">
+            <mat-label>Color</mat-label>
+            <mat-select [(ngModel)]="heroe.color" required>
+                <mat-option *ngFor="let color of colors" [value]="color.id">
+                    {{color.desc}}
                 </mat-option>
             </mat-select>
-        </mat-form-field> -->
+        </mat-form-field>
 
         <mat-form-field fxFlex="100">
             <mat-label>Poster Url</mat-label>

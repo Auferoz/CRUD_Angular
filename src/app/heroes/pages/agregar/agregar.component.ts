@@ -17,14 +17,22 @@ import { HeroesService } from '../../services/heroes.service';
 })
 export class AgregarComponent implements OnInit {
 
-  publishers = [
+  colors = [
     {
-      id: 'DC Comics',
-      desc: 'DC - Comics'
+      id: 'info',
+      desc: 'Color - Celeste'
     },
     {
-      id: 'Marvel Comics',
-      desc: 'Marvel - Comics'
+      id: 'success',
+      desc: 'Color - Azul'
+    },
+    {
+      id: 'danger',
+      desc: 'Color - Rojo'
+    },
+    {
+      id: 'warning',
+      desc: 'Color - Amarillo'
     }
   ];
 
