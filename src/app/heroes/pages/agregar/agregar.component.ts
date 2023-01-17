@@ -2,7 +2,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { switchMap } from 'rxjs/operators';
 
-import { Heroe, Publisher } from '../../interfaces/heroes.interface';
+import { Heroe } from '../../interfaces/heroes.interface';
 import { HeroesService } from '../../services/heroes.service';
 
 @Component({
@@ -29,12 +29,30 @@ export class AgregarComponent implements OnInit {
   ];
 
   heroe: Heroe = {
-    superhero: '',
-    alter_ego: '',
-    characters: '',
-    first_appearance: '',
-    publisher: Publisher.DCComics,
-    alt_img: '',
+    id: '',
+    title: '',
+    released: '',
+    poster: '',
+    image: '',
+    genre: '',
+    platform_name: '',
+    platform_icon: '',
+    rating: '',
+    video: '',
+    color: '',
+    status: '',
+    any: '',
+    achievements_obt: '',
+    achievements_ttl: '',
+    hours_mttf: '',
+    hltb_mainyextra: '',
+    hltb_full: '',
+    date_start: '',
+    date_mainstory: '',
+    date_completed: '',
+    last_dayplay: '',
+    trueAchievements: '',
+    square: ''
   }
 
   constructor(
@@ -58,7 +76,7 @@ export class AgregarComponent implements OnInit {
 
   guardar(){
 
-    if( this.heroe.superhero.trim().length === 0){
+    if( this.heroe.title.trim().length === 0){
       return;
     }
 

@@ -1,21 +1,21 @@
 <mat-card>
     <mat-card-header>
         <mat-card-title>
-            {{ heroe.superhero }}
+            {{ heroe.title }}
         </mat-card-title>
         <mat-card-subtitle>
-            {{ heroe.alter_ego }}
+            {{ heroe.released }}
         </mat-card-subtitle> 
     </mat-card-header>
 
     <img mat-card-image [src]="heroe | imagen" alt="">
 
     <mat-card-content>
-        <h3>{{ heroe.publisher }}</h3>
+        <h3>{{ heroe.genre }}</h3>
         <p>
-            <b>Primera aparición</b>: {{ heroe.first_appearance}}
+            <b>Date Start</b>: {{ heroe.date_start}}
             <br>
-            <b>Personajes:</b> {{ heroe.characters }}
+            <b>Last Play:</b> {{ heroe.last_dayplay }}
         </p>
     </mat-card-content>
 

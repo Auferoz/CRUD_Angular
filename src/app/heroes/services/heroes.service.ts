@@ -16,27 +16,27 @@ export class HeroesService {
   ) { }
 
     getHeroes():Observable<Heroe[]>{
-      return this.http.get<Heroe[]>(`${this.baseUrl}/heroes`);
+      return this.http.get<Heroe[]>(`${this.baseUrl}/games`);
     }
 
     getHeroePorId(id:string):Observable<Heroe>{
-      return this.http.get<Heroe>(`${this.baseUrl}/heroes/${id}`);
+      return this.http.get<Heroe>(`${this.baseUrl}/games/${id}`);
     }
 
     getSugerencias(termino:string):Observable<Heroe[]>{
-      return this.http.get<Heroe[]>(`${this.baseUrl}/heroes?q=${termino}&_limit=6`);
+      return this.http.get<Heroe[]>(`${this.baseUrl}/games?q=${termino}&_limit=6`);
     }
 
     postAgregarHeroe(heroe:Heroe):Observable<Heroe>{
-      return this.http.post<Heroe>(`${this.baseUrl}/heroes`, heroe);
+      return this.http.post<Heroe>(`${this.baseUrl}/games`, heroe);
     }
 
     patchActualizarHeroe(heroe:Heroe):Observable<Heroe>{
-      return this.http.put<Heroe>(`${this.baseUrl}/heroes/${heroe.id}`, heroe);
+      return this.http.put<Heroe>(`${this.baseUrl}/games/${heroe.id}`, heroe);
     }
 
     DeleteHeroe(id:string):Observable<any>{
-      return this.http.delete<any>(`${this.baseUrl}/heroes/${id}`);
+      return this.http.delete<any>(`${this.baseUrl}/games/${id}`);
     }
 
 }

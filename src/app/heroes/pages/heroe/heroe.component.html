@@ -10,22 +10,20 @@
     <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="20">
 
         <div fxFlex="50">
-            <h1>{{ heroe.superhero }} <small>- {{ heroe.alter_ego }}</small> </h1>
+            <h1>{{ heroe.title }} <small>- {{ heroe.released }}</small> </h1>
             <mat-divider></mat-divider>
             <br>
             <img [src]="heroe | imagen">
         </div>
 
         <div fxFlex="50">
-            <h1>{{ heroe.publisher }}</h1>
+            <h1>{{ heroe.genre }}</h1>
             <mat-divider></mat-divider>
             <br>
 
             <mat-list>
-                <mat-list-item>{{ heroe.first_appearance }}</mat-list-item>
-                <mat-list-item>{{ heroe.characters }}</mat-list-item>
-                <mat-list-item>{{ heroe.publisher }}</mat-list-item>
-                <mat-list-item>{{ heroe.alter_ego }}</mat-list-item>
+                <mat-list-item>{{ heroe.date_start }}</mat-list-item>
+                <mat-list-item>{{ heroe.last_dayplay }}</mat-list-item>
                 <mat-list-item>{{ heroe | json }}</mat-list-item>
             </mat-list>
             <br>

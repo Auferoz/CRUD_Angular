@@ -1,14 +1,26 @@
 export interface Heroe {
-    id?:              string;
-    superhero:        string;
-    publisher:        Publisher;
-    alter_ego:        string;
-    first_appearance: string;
-    characters:       string;
-    alt_img?:         string;
-}
-
-export enum Publisher {
-    DCComics = "DC Comics",
-    MarvelComics = "Marvel Comics",
+    id:               string;
+    title:            string;
+    released:         string;
+    poster:           string;
+    image:            string;
+    genre:            string;
+    platform_name:    string;
+    platform_icon:    string;
+    rating:           string;
+    video:            string;
+    color:            string;
+    status:           string;
+    any:              string;
+    achievements_obt: string;
+    achievements_ttl: string;
+    hours_mttf:       string;
+    hltb_mainyextra:  string;
+    hltb_full:        string;
+    date_start:       string;
+    date_mainstory:   string;
+    date_completed:   string;
+    last_dayplay:     string;
+    trueAchievements: string;
+    square:           string;
 }
