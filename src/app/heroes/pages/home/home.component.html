@@ -14,15 +14,15 @@
         <mat-nav-list>
             <a routerLink="./listado" mat-list-item (click)="sidenav.toggle()">
                 <mat-icon matListItemIcon>label</mat-icon>
-                <span>Listado de Héroes</span>
+                <span>Lista del 2023</span>
             </a>
             <a routerLink="./agregar" mat-list-item (click)="sidenav.toggle()">
                 <mat-icon matListItemIcon>add</mat-icon>
-                <span>Añadir Heroe</span>
+                <span>Añadir Juego</span>
             </a>
             <a routerLink="./buscar" mat-list-item (click)="sidenav.toggle()">
                 <mat-icon matListItemIcon>search</mat-icon>
-                <span>Buscar Héroe</span>
+                <span>Buscar Juego</span>
             </a>
         </mat-nav-list>
 
@@ -40,8 +40,6 @@
         </button>
     </mat-toolbar>
 
-    <div class="container">
         <router-outlet></router-outlet>
-    </div>
 
 </mat-sidenav-container>

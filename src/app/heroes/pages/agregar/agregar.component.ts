@@ -10,30 +10,34 @@ import { HeroesService } from '../../services/heroes.service';
   templateUrl: './agregar.component.html',
   styles: [`
     img {
-      width: 205px;
+      width: 276px;
       border-radius: 10px;
+    }
+    mat-label{
+      font-size:12px;
     }
   `]
 })
 export class AgregarComponent implements OnInit {
 
   colors = [
-    {
-      id: 'info',
-      desc: 'Color - Celeste'
-    },
-    {
-      id: 'success',
-      desc: 'Color - Azul'
-    },
-    {
-      id: 'danger',
-      desc: 'Color - Rojo'
-    },
-    {
-      id: 'warning',
-      desc: 'Color - Amarillo'
-    }
+    {id: 'info', desc: 'Info - Celeste'},
+    {id: 'success', desc: 'Success - Azul'},
+    {id: 'danger', desc: 'Danger - Rojo'},
+    {id: 'warning',desc: 'Warning - Amarillo'}
+  ];
+
+  plataformas = [
+    {id:'Riot Launcher',desc:'Riot Launcher'},
+    {id:'Steam',desc:'Steam'},
+    {id:'Xbox App',desc:'Xbox App'},
+    {id:'Xbox Series X',desc:'Xbox Series X'},
+  ];
+
+  iconos = [
+    {id:'fa-brands fa-xbox', desc:'Xbox'},
+    {id:'fa-brands fa-steam', desc:'Steam'},
+    {id:'fa-solid fa-computer', desc:'PC'},
   ];
 
   heroe: Heroe = {
@@ -108,6 +112,10 @@ export class AgregarComponent implements OnInit {
       .subscribe( resp => {
         this.router.navigate(['/heroes']);
       });
+  }
+  
+  regresar(){
+    this.router.navigate(['/heroes/listado']);
   }
 
 }

@@ -1,60 +1,177 @@
-<h1>Nuevo Game: <small>{{heroe.title}}</small> </h1>
+<section>
+    <div class="container mt-5">
+        <h1>Nuevo Game: <small>{{heroe.title}}</small> </h1>
 
-<div fxLayout="row" fxLayout.xs="column" fxLayoutGap="40">
-    <div fxFlex="50" fxLayout="column">
+        <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="40">
+            <div fxFlex="50" fxLayout="column">
 
-        <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="40" fxLayoutGap.xs="0">
-            <mat-form-field fxFlex="50">
-                <mat-label>Titulo</mat-label>
-                <input matInput type="text" [(ngModel)]="heroe.title" required>
-            </mat-form-field>
+                <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="40" fxLayoutGap.xs="0">
+                    <mat-form-field fxFlex="50">
+                        <mat-label>Titulo</mat-label>
+                        <input matInput type="text" [(ngModel)]="heroe.title" required>
+                    </mat-form-field>
 
-            <mat-form-field fxFlex="50">
-                <mat-label>Released</mat-label>
-                <input matInput type="text" [(ngModel)]="heroe.released" required>
-            </mat-form-field>
+                    <mat-form-field fxFlex="50">
+                        <mat-label>Released</mat-label>
+                        <input matInput type="text" [(ngModel)]="heroe.released" required>
+                    </mat-form-field>
+                </div>
+
+                <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="40" fxLayoutGap.xs="0">
+                    <mat-form-field fxFlex="50">
+                        <mat-label>genre</mat-label>
+                        <input matInput type="text" [(ngModel)]="heroe.genre" required>
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="50">
+                        <mat-label>rating</mat-label>
+                        <input matInput type="text" [(ngModel)]="heroe.rating" required>
+                    </mat-form-field>
+                </div>
+
+                <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="40" fxLayoutGap.xs="0">
+                    <mat-form-field fxFlex="50">
+                        <mat-label>Plataforma</mat-label>
+                        <mat-select [(ngModel)]="heroe.platform_name" required>
+                            <mat-option *ngFor="let plataforma of plataformas" [value]="plataforma.id">
+                                {{plataforma.desc}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="50">
+                        <mat-label>Icono</mat-label>
+                        <mat-select [(ngModel)]="heroe.platform_icon" required>
+                            <mat-option *ngFor="let icono of iconos" [value]="icono.id">
+                                {{icono.desc}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="40" fxLayoutGap.xs="0">
+                    <mat-form-field fxFlex="50">
+                        <mat-label>Color</mat-label>
+                        <mat-select [(ngModel)]="heroe.color" required>
+                            <mat-option *ngFor="let color of colors" [value]="color.id">
+                                {{color.desc}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="50">
+                        <mat-label>status</mat-label>
+                        <input matInput type="text" [(ngModel)]="heroe.status" required>
+                    </mat-form-field>
+                </div>
+
+                <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="40" fxLayoutGap.xs="0">
+                    <mat-form-field fxFlex="30">
+                        <mat-label>any</mat-label>
+                        <input matInput type="text" [(ngModel)]="heroe.any" required>
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="30">
+                        <mat-label>achievements_obt</mat-label>
+                        <input matInput type="text" [(ngModel)]="heroe.achievements_obt" required>
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="30">
+                        <mat-label>achievements_ttl</mat-label>
+                        <input matInput type="text" [(ngModel)]="heroe.achievements_ttl" required>
+                    </mat-form-field>
+                </div>
+
+                <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="40" fxLayoutGap.xs="0">
+                    <mat-form-field fxFlex="30">
+                        <mat-label>hours_mttf</mat-label>
+                        <input matInput type="text" [(ngModel)]="heroe.hours_mttf" required>
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="30">
+                        <mat-label>hltb_mainyextra</mat-label>
+                        <input matInput type="text" [(ngModel)]="heroe.hltb_mainyextra" required>
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="30">
+                        <mat-label>hltb_full</mat-label>
+                        <input matInput type="text" [(ngModel)]="heroe.hltb_full" required>
+                    </mat-form-field>
+                </div>
+
+                <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="40" fxLayoutGap.xs="0">
+
+                    <mat-form-field fxFlex="20">
+                        <mat-label>date_start</mat-label>
+                        <input matInput type="text" [(ngModel)]="heroe.date_start" required>
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="20">
+                        <mat-label>date_mainstory</mat-label>
+                        <input matInput type="text" [(ngModel)]="heroe.date_mainstory" required>
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="20">
+                        <mat-label>date_completed</mat-label>
+                        <input matInput type="text" [(ngModel)]="heroe.date_completed" required>
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="20">
+                        <mat-label>last_dayplay</mat-label>
+                        <input matInput type="url" [(ngModel)]="heroe.last_dayplay" required>
+                    </mat-form-field>
+                </div>
+
+                <mat-form-field fxFlex="100">
+                    <mat-label>Video</mat-label>
+                    <input matInput type="text" [(ngModel)]="heroe.video" required>
+                </mat-form-field>
+
+                <mat-form-field fxFlex="100">
+                    <mat-label>Poster Url</mat-label>
+                    <input matInput type="url" [(ngModel)]="heroe.poster" required>
+                </mat-form-field>
+
+                <mat-form-field fxFlex="100">
+                    <mat-label>Image Url</mat-label>
+                    <input matInput type="url" [(ngModel)]="heroe.image" required>
+                </mat-form-field>
+
+                <mat-form-field fxFlex="100">
+                    <mat-label>trueAchievements Url</mat-label>
+                    <input matInput type="url" [(ngModel)]="heroe.trueAchievements" required>
+                </mat-form-field>
+
+                <mat-form-field fxFlex="100">
+                    <mat-label>square Url</mat-label>
+                    <input matInput type="url" [(ngModel)]="heroe.square" required>
+                </mat-form-field>
+
+                <hr>
+
+                <div fxLayout>
+                    <button mat-raised-button color="primary" (click)="guardar()" class="me-3">
+                        <mat-icon>edit</mat-icon>
+                        Guardar
+                    </button>
+
+                    <button mat-raised-button color="accent" (click)="regresar()">
+                        <mat-icon>undo</mat-icon>
+                        Regresar
+                    </button>
+
+                    <span class="spacer"></span>
+
+                    <button mat-raised-button color="warn" (click)="borrarHeroe()" *ngIf="heroe.id">
+                        <mat-icon>remove</mat-icon>
+                        Borrar
+                    </button>
+                </div>
+
+            </div>
+            <div fxFlex="50">
+                <img [src]="heroe | imagen">
+            </div>
         </div>
-
-        <mat-form-field fxFlex="100">
-            <mat-label>Date Start</mat-label>
-            <input matInput type="text" [(ngModel)]="heroe.date_start" required>
-        </mat-form-field>
-
-        <mat-form-field fxFlex="100">
-            <mat-label>Last Play</mat-label>
-            <input matInput type="text" [(ngModel)]="heroe.last_dayplay" required>
-        </mat-form-field>
-
-        <mat-form-field fxFlex="100">
-            <mat-label>Color</mat-label>
-            <mat-select [(ngModel)]="heroe.color" required>
-                <mat-option *ngFor="let color of colors" [value]="color.id">
-                    {{color.desc}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
-
-        <mat-form-field fxFlex="100">
-            <mat-label>Poster Url</mat-label>
-            <input matInput type="url" [(ngModel)]="heroe.poster" required>
-        </mat-form-field>
-
-        <div fxLayout>
-            <button mat-raised-button color="primary" (click)="guardar()">
-                <mat-icon>edit</mat-icon>
-                Guardar
-            </button>
-
-            <span class="spacer"></span>
-
-            <button mat-raised-button color="warn" (click)="borrarHeroe()" *ngIf="heroe.id">
-                <mat-icon>remove</mat-icon>
-                Borrar
-            </button>
-        </div>
-
     </div>
-    <div fxFlex="50">
-        <img [src]="heroe | imagen">
-    </div>
-</div>
+</section>

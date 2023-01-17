@@ -7,7 +7,167 @@
 
 <ng-template #divHeroe>
 
-    <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="20">
+    <section class="bg-image">
+        <!-- <div class="mask mask-custom"></div> -->
+        <div class="container pt-5">
+            <div class="row d-flex justify-content-between">
+                <div class="col-12 col-md-5">
+                    <img [src]="heroe | imagen" class="img-fluid border">
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1 class="text-dark m-0">{{heroe.title}}</h1>
+                            <hr style="width: 100%; height: 2px; background: #424242;margin:5px 0px">
+
+                            <div class="progress rounded-4" style="height:18.33px;">
+                                <div class="progress-bar bg-{{heroe.color}} progress-bar-striped progress-bar-animated"
+                                    role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+                                    [style]="'width:'+ heroe.any +'%;height:18.33px;'">{{heroe.any}} %
+                                </div>
+                            </div>
+
+                            <ul class="list-group list-group-light list-group-small">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <p class="m-0">
+                                        <i class="fa-regular fa-calendar"></i>
+                                        Publicado el:
+                                    </p>
+                                    <span class="badge badge-dark rounded-pill">{{heroe.released}} &nbsp; <i
+                                            class="fa-solid fa-calendar-day"></i></span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <p class="m-0">
+                                        <i class="fa-regular fa-address-book"></i>
+                                        Géneros:
+                                    </p>
+                                    <span class="badge badge-dark rounded-pill">{{heroe.genre}} &nbsp; <i
+                                            class="fa-solid fa-bars"></i></span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <p class="m-0">
+                                        <i class="fa-solid fa-gamepad"></i>
+                                        Plataforma:
+                                    </p>
+                                    <span class="badge badge-dark rounded-pill">{{heroe.platform_name}} <i
+                                            class="{{heroe.platform_icon}}"></i></span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center"
+                                    [ngClass]="{'d-none': !heroe.rating, '': heroe.rating}">
+                                    <p class="m-0">
+                                        <i class="fa-solid fa-star"></i>
+                                        Valoración:
+                                    </p>
+                                    <span class="badge badge-dark rounded-pill">{{heroe.rating}} &nbsp; <i
+                                            class="fa-regular fa-star"></i></span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <p class="m-0">
+                                        <i class="fa-solid fa-video"></i>
+                                        Video:
+                                    </p>
+                                    <span class="badge badge-dark rounded-pill"> <a href="{{youtube + heroe.video}}"
+                                            target="_blank" class="text-white">
+                                            {{heroe.video}} &nbsp; <i class="fa-brands fa-youtube"></i></a></span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <p class="m-0">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                        Estado:
+                                    </p>
+                                    <span class="badge badge-dark rounded-pill">{{heroe.status |
+                                        titlecase}} &nbsp; <i class="fa-solid fa-check"></i></span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <p class="m-0">
+                                        <i class="fa-solid fa-trophy"></i>
+                                        Logros:
+                                    </p>
+                                    <span class="badge badge-dark rounded-pill">{{heroe.achievements_obt}} /
+                                        {{heroe.achievements_ttl}} &nbsp; <i class="fa-solid fa-trophy"></i></span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <p class="m-0">
+                                        <i class="fa-solid fa-clock"></i>
+                                        Horas Jugadas:
+                                    </p>
+                                    <span class="badge badge-dark rounded-pill">{{heroe.hours_mttf}} &nbsp; <i
+                                            class="fa-regular fa-clock"></i></span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <p class="m-0">
+                                        <i class="fa-solid fa-hourglass-end"></i>
+                                        HowLongToBeat:
+                                    </p>
+                                    <span class="badge badge-dark rounded-pill">{{heroe.hltb_mainyextra}} -
+                                        {{heroe.hltb_full}} &nbsp; <i class="fa-solid fa-hourglass-start"></i></span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <p class="m-0">
+                                        <i class="fa-regular fa-calendar-minus"></i>
+                                        Fecha de Inicio:
+                                    </p>
+                                    <span class="badge badge-dark rounded-pill">{{heroe.date_start}} &nbsp; <i
+                                            class="fa-regular fa-calendar"></i></span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center"
+                                    [ngClass]="{'d-none': !heroe.date_mainstory, 'fecha-completada': heroe.date_mainstory}">
+                                    <p class="m-0">
+                                        <i class="fa-regular fa-calendar-plus"></i>
+                                        Fecha Completada Historia:
+                                    </p>
+                                    <span class="badge badge-dark rounded-pill">{{heroe.date_mainstory}} &nbsp; <i
+                                            class="fa-regular fa-calendar"></i></span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center"
+                                    [ngClass]="{'d-none': !heroe.date_completed, 'fecha-Completado': heroe.date_completed}">
+                                    <p class="m-0">
+                                        <i class="fa-regular fa-calendar-check"></i>
+                                        Fecha Completado 100%:
+                                    </p>
+                                    <span class="badge badge-dark rounded-pill">{{heroe.date_completed}} &nbsp; <i
+                                            class="fa-regular fa-calendar"></i></span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <p class="m-0">
+                                        <i class="fa-regular fa-calendar-xmark"></i>
+                                        Ultimo Dia:
+                                    </p>
+                                    <span class="badge badge-dark rounded-pill">{{heroe.last_dayplay}} &nbsp; <i
+                                            class="fa-regular fa-calendar"></i></span>
+                                </li>
+                            </ul>
+
+                            <button type="button" class="btn btn-primary w-100 p-2 mt-4 mb-3"
+                                (click)="regresar()">Regresar</button>
+                            <button type="button" class="btn btn-danger w-100 p-2 mb-3"
+                                [routerLink]="['/heroes/editar', heroe.id]">Editar</button>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="mb-4">
+                        <img src="{{heroe.image}}" alt="bg-Image" class="bg-image img-fluid border"
+                            [ngClass]="{'d-none': !heroe.image, 'bg-Image': heroe.image}">
+                    </div>
+                    <div class="mb-4">
+                        <img src="{{heroe.trueAchievements}}" alt="trueAchievements" class="bg-image img-fluid border"
+                            [ngClass]="{'d-none': !heroe.trueAchievements, 'trueAchievements': heroe.trueAchievements}">
+                    </div>
+                    <div class="mb-4">
+                        <img src="{{heroe.square}}" alt="square" class="bg-image img-fluid border"
+                            [ngClass]="{'d-none': !heroe.square, 'square': heroe.square}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="20">
 
         <div fxFlex="50">
             <h1>{{ heroe.title }} <small>- {{ heroe.released }}</small> </h1>
@@ -31,5 +191,5 @@
             <button mat-button color="accent" (click)="regresar()">Regresar</button>
         </div>
 
-    </div>
+    </div> -->
 </ng-template>
