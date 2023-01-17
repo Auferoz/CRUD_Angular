@@ -32,7 +32,11 @@ export class HeroesService {
     }
 
     patchActualizarHeroe(heroe:Heroe):Observable<Heroe>{
-      return this.http.put<Heroe>(`${this.baseUrl}/heroes`, heroe);
+      return this.http.put<Heroe>(`${this.baseUrl}/heroes/${heroe.id}`, heroe);
+    }
+
+    DeleteHeroe(id:string):Observable<any>{
+      return this.http.delete<any>(`${this.baseUrl}/heroes/${id}`);
     }
 
 }

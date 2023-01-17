@@ -8,7 +8,7 @@
                 <mat-label>Super Heroe</mat-label>
                 <input matInput type="text" [(ngModel)]="heroe.superhero" required>
             </mat-form-field>
-    
+
             <mat-form-field fxFlex="50">
                 <mat-label>Alter Ego</mat-label>
                 <input matInput type="text" [(ngModel)]="heroe.alter_ego" required>
@@ -39,15 +39,19 @@
             <input matInput type="url" [(ngModel)]="heroe.alt_img" required>
         </mat-form-field>
 
-        <!-- <mat-form-field fxFlex="100">
-            <mat-label>id</mat-label>
-            <input matInput type="text" [(ngModel)]="heroe.id" required>
-        </mat-form-field> -->
-        
-        <button mat-raised-button color="warn" (click)="guardar()" style="padding: 20px 0px;">
-            <mat-icon>edit</mat-icon>
-            Guardar
-        </button>
+        <div fxLayout>
+            <button mat-raised-button color="primary" (click)="guardar()">
+                <mat-icon>edit</mat-icon>
+                Guardar
+            </button>
+
+            <span class="spacer"></span>
+
+            <button mat-raised-button color="warn" (click)="borrarHeroe()" *ngIf="heroe.id">
+                <mat-icon>remove</mat-icon>
+                Borrar
+            </button>
+        </div>
 
     </div>
     <div fxFlex="50">
