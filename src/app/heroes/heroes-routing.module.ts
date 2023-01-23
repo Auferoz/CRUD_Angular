@@ -5,6 +5,7 @@ import { AgregarComponent } from './pages/agregar/agregar.component';
 import { BuscarComponent } from './pages/buscar/buscar.component';
 import { HeroeComponent } from './pages/heroe/heroe.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ListMoviesComponent } from './pages/list-movies/list-movies.component';
 
 const rutas: Routes = [
   {
@@ -12,6 +13,7 @@ const rutas: Routes = [
     component: HomeComponent,
     children: [
     {path: 'listado', component: ListadoComponent},
+    {path: 'Movies2023', component: ListMoviesComponent},
     {path: 'agregar', component: AgregarComponent},
     {path: 'editar/:id', component: AgregarComponent},
     {path: 'buscar', component: BuscarComponent},

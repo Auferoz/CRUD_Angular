@@ -1,9 +1,41 @@
 <section class="container mt-5">
+
     <div class="row">
-        <h1>Lista de juegos 2023</h1>
+        <div class="col-6 col-sm-6 col-lg-2 mb-4" *ngFor="let graph of graphs">
+            <div class="card h-100 pe-true border">
+                <div class="card-body pb-2 p-2 p-md-3">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div>
+                            <h2 class="fw-normal text-{{graph.color}} m-0">{{graph.qty}}</h2>
+                            <p class="subtitle h5 text-muted mb-0">{{graph.category | titlecase}}</p>
+                        </div>
+                        <div class="flex-shrink-0 ms-0 ms-md-3">
+                            <i class="fa-regular fa-{{graph.icon}} display-6 text-{{graph.color}}"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer p-3 bg-{{graph.color}}-light">
+                    <div class="row d-flex align-items-between text-{{graph.color}}">
+                        <div class="col-9">
+                            <p class="mb-0 h6">{{graph.percent}} %</p>
+                        </div>
+                        <div class="col-3">
+                            <i class="fas fa-caret-up"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <mat-divider></mat-divider>
         <br>
-        <div class="col-6 col-md-3 col-lg-2" *ngFor="let heroe of heroes">
+    </div>
+
+    <div class="row">
+        <h1>Jugados en 2023</h1>
+        <mat-divider></mat-divider>
+        <br>
+        <div class="col-6 col-md-3 col-lg-2 mb-4" *ngFor="let heroe of heroes">
             <app-heroe-tarjeta [heroe]="heroe"></app-heroe-tarjeta>
         </div>
     </div>

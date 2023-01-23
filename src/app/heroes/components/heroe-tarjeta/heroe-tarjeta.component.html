@@ -1,7 +1,7 @@
-<div class="card" style="background-color:#424242;">
+<div class="card border bg-42">
     <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
         <img [src]="heroe | imagen" class="img-fluid" />
-        <a href="#!">
+        <a [routerLink]="['/heroes', heroe.id]">
             <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
         </a>
     </div>
