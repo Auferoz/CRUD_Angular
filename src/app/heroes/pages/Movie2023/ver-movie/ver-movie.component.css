@@ -1,0 +1,6 @@
+.mask-custom {
+    backdrop-filter: contrast(110%) brightness(110%) saturate(130%) sepia(0%) hue-rotate(0deg) grayscale(0%) invert(0%) blur(0px);
+    mix-blend-mode: screen;
+    background: rgba(243, 106, 188, 0.3);
+    opacity: 1;
+}

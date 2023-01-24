@@ -74,7 +74,6 @@ export class AgregarComponent implements OnInit {
   ){}
 
   ngOnInit(): void {
-
     if( !this.router.url.includes('editar') ) {
       return;
     }
@@ -83,7 +82,6 @@ export class AgregarComponent implements OnInit {
     .pipe(
       switchMap( ({ id }) => this.heroesService.getHeroePorId(id)))
      .subscribe ( heroe => this.heroe = heroe);
-
   }
 
   guardar(){

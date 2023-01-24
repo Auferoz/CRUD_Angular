@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Heroe } from '../interfaces/heroes.interface';
 import { environment } from '../../../environments/environments';
+import { Heroe } from '../interfaces/heroes.interface';
 import { Graph } from '../interfaces/graphs.interface';
+import { Movie } from '../interfaces/movies.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -42,6 +43,25 @@ export class HeroesService {
 
     DeleteHeroe(id:string):Observable<any>{
       return this.http.delete<any>(`${this.baseUrl}/games2023/${id}`);
+    }
+
+
+      // Movies Sheet
+
+    getSheetMovie():Observable<Movie[]>{
+      return this.http.get<Movie[]>(`https://sheet.best/api/sheets/2ac89502-af3e-4874-9292-eaf4a1d9c6b8/tabs/_MoviesL_2023`);
+    }
+
+    getMoviePorId(id:string):Observable<Movie[]>{
+      return this.http.get<Movie[]>(`https://sheet.best/api/sheets/2ac89502-af3e-4874-9292-eaf4a1d9c6b8/tabs/_MoviesL_2023/id/${id}`);
+    }
+
+    postAgregarMvoie(movie:Movie):Observable<Movie>{
+      return this.http.post<Movie>(`https://sheet.best/api/sheets/2ac89502-af3e-4874-9292-eaf4a1d9c6b8/tabs/_MoviesL_2023`, movie);
+    }
+
+    patchActualizarMovie(movie:Movie):Observable<Movie>{
+      return this.http.put<Movie>(`https://sheet.best/api/sheets/2ac89502-af3e-4874-9292-eaf4a1d9c6b8/tabs/_MoviesL_2023/id/${movie.id}`, movie);
     }
 
 }

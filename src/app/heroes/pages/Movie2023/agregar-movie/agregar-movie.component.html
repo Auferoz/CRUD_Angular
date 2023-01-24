@@ -1,0 +1,79 @@
+<section>
+    <div class="container mt-5">
+        <h1>Agregar nueva movie: <small>{{movie.title}}</small> </h1>
+
+        <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="40">
+            <div fxFlex="50" fxLayout="column">
+
+                <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="40" fxLayoutGap.xs="0">
+                    <mat-form-field fxFlex="50">
+                        <mat-label>Titulo</mat-label>
+                        <input matInput type="text" [(ngModel)]="movie.title" required>
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="50">
+                        <mat-label>Released</mat-label>
+                        <input matInput type="text" [(ngModel)]="movie.released" required>
+                    </mat-form-field>
+                </div>
+
+                <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="40" fxLayoutGap.xs="0">
+                    <mat-form-field fxFlex="50">
+                        <mat-label>Runtime</mat-label>
+                        <input matInput type="text" [(ngModel)]="movie.runtime" required>
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="50">
+                        <mat-label>Genre</mat-label>
+                        <input matInput type="text" [(ngModel)]="movie.genre" required>
+                    </mat-form-field>
+                </div>
+
+                <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="40" fxLayoutGap.xs="0">
+                    <mat-form-field fxFlex="50">
+                        <mat-label>Rating</mat-label>
+                        <input matInput type="text" [(ngModel)]="movie.rating" required>
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="50">
+                        <mat-label>View Date</mat-label>
+                        <input matInput type="text" [(ngModel)]="movie.view" required>
+                    </mat-form-field>
+                </div>
+
+                <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="40" fxLayoutGap.xs="0">
+                    <mat-form-field fxFlex="50">
+                        <mat-label>Poster</mat-label>
+                        <input matInput type="text" [(ngModel)]="movie.poster" required>
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="50">
+                        <mat-label>Image</mat-label>
+                        <input matInput type="text" [(ngModel)]="movie.image" required>
+                    </mat-form-field>
+                </div>
+
+                <hr>
+
+                <div fxLayout>
+                    <button mat-raised-button color="primary" (click)="guardar()" class="me-3">
+                        <mat-icon>edit</mat-icon>
+                        Guardar
+                    </button>
+
+                    <button mat-raised-button color="accent" (click)="regresar()">
+                        <mat-icon>undo</mat-icon>
+                        Regresar
+                    </button>
+
+                    <span class="spacer"></span>
+                </div>
+
+            </div>
+
+            <div fxFlex="50">
+                <img class="rounded-7" [src]="movie.poster">
+            </div>
+        </div>
+    </div>
+</section>

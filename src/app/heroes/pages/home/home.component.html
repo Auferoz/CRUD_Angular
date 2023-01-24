@@ -14,11 +14,7 @@
         <mat-nav-list>
             <a routerLink="./listado" mat-list-item (click)="sidenav.toggle()">
                 <mat-icon matListItemIcon>label</mat-icon>
-                <span>Lista del 2023</span>
-            </a>
-            <a routerLink="./Movies2023" mat-list-item (click)="sidenav.toggle()">
-                <mat-icon matListItemIcon>label</mat-icon>
-                <span>Movies 2023</span>
+                <span>Juegos del 2023</span>
             </a>
             <a routerLink="./agregar" mat-list-item (click)="sidenav.toggle()">
                 <mat-icon matListItemIcon>add</mat-icon>
@@ -27,6 +23,17 @@
             <a routerLink="./buscar" mat-list-item (click)="sidenav.toggle()">
                 <mat-icon matListItemIcon>search</mat-icon>
                 <span>Buscar Juego</span>
+            </a>
+
+            <mat-divider></mat-divider>
+
+            <a routerLink="./Movies2023" mat-list-item (click)="sidenav.toggle()">
+                <mat-icon matListItemIcon>label</mat-icon>
+                <span>Movies 2023</span>
+            </a>
+            <a routerLink="./agregar/movie" mat-list-item (click)="sidenav.toggle()">
+                <mat-icon matListItemIcon>add</mat-icon>
+                <span>Agregar Movie</span>
             </a>
         </mat-nav-list>
 

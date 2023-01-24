@@ -15,7 +15,9 @@ import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.
 
 import { ImagenPipe } from './pipes/imagen.pipe';
 import { ListSeriesComponent } from './pages/list-series/list-series.component';
-import { ListMoviesComponent } from './pages/list-movies/list-movies.component';
+import { ListMoviesComponent } from './pages/Movie2023/list-movies/list-movies.component';
+import { VerMovieComponent } from './pages/Movie2023/ver-movie/ver-movie.component';
+import { AgregarMovieComponent } from './pages/Movie2023/agregar-movie/agregar-movie.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { ListMoviesComponent } from './pages/list-movies/list-movies.component';
     HeroeTarjetaComponent,
     ImagenPipe,
     ListSeriesComponent,
-    ListMoviesComponent
+    ListMoviesComponent,
+    VerMovieComponent,
+    AgregarMovieComponent
   ],
   imports: [
     CommonModule,
