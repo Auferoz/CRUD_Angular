@@ -17,7 +17,7 @@ export class ListMoviesComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.heroesService.getSheetMovie()
+    this.heroesService.getSheetMovies()
     .subscribe( movies => {
       this.sheets = movies;
     })

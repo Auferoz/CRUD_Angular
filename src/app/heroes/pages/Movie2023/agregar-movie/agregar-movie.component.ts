@@ -57,7 +57,7 @@ export class AgregarMovieComponent implements OnInit{
         })
     } else {
       // Crear 
-      this.heroesService.postAgregarMvoie( this.movie )
+      this.heroesService.postAgregarMovie( this.movie )
         .subscribe( movie => {
           this.router.navigate(['/heroes/Movies2023', movie.id]);
           console.log('crear...', movie);

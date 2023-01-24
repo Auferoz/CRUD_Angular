@@ -1,6 +1,6 @@
 export const environment = {
     production: true,
     baseUrl: 'https://sheetdb.io/api/v1/uj1vwr8ger7n8', // Url Base <- SheetDB | Sheet Best
-    sheetUrl: 'heroes', // Tabs de la DB que agarra
-    searchID: 'superhero', // Buscar por 
+
+    sheetBest: 'https://sheet.best/api/sheets/2ac89502-af3e-4874-9292-eaf4a1d9c6b8',
 }

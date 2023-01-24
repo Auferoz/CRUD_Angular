@@ -80,8 +80,9 @@ export class AgregarComponent implements OnInit {
 
     this.activatedRoute.params
     .pipe(
-      switchMap( ({ id }) => this.heroesService.getHeroePorId(id)))
-     .subscribe ( heroe => this.heroe = heroe);
+      switchMap( ({ id }) => this.heroesService.getGamePorId(id))
+      )
+      .subscribe ( (heroe: Heroe[]) => this.heroe = heroe[0]);
   }
 
   guardar(){
@@ -92,11 +93,11 @@ export class AgregarComponent implements OnInit {
 
     if( this.heroe.id ){
       // Actualizar 
-      this.heroesService.patchActualizarHeroe( this.heroe )
+      this.heroesService.patchActualizarGame( this.heroe )
         .subscribe( heroe => console.log('Act..', heroe))
     } else {
       // Crear 
-      this.heroesService.postAgregarHeroe( this.heroe )
+      this.heroesService.postAgregarGame( this.heroe )
         .subscribe( heroe => {
           this.router.navigate(['/heroes/editar', heroe.id]);
         })
@@ -106,7 +107,7 @@ export class AgregarComponent implements OnInit {
 
   borrarHeroe(){
 
-    this.heroesService.DeleteHeroe( this.heroe.id! )
+    this.heroesService.DeleteGame( this.heroe.id! )
       .subscribe( resp => {
         this.router.navigate(['/heroes']);
       });

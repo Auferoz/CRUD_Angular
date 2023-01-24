@@ -17,38 +17,42 @@ export class HeroesService {
     private http: HttpClient
   ) { }
 
-    getHeroes():Observable<Heroe[]>{
-      return this.http.get<Heroe[]>(`${this.baseUrl}/games2023?_sort=last_dayplay&_order=desc`);
+    // Games 2023 
+    
+    getSheetGames():Observable<Heroe[]>{
+      return this.http.get<Heroe[]>(`https://sheet.best/api/sheets/2ac89502-af3e-4874-9292-eaf4a1d9c6b8/tabs/_GamesP_2023`);
     }
 
-    getGraph():Observable<Graph[]>{
-      return this.http.get<Graph[]>(`${this.baseUrl}/graph2023`);
+    getGamePorId(id:string):Observable<Heroe[]>{
+      return this.http.get<Heroe[]>(`https://sheet.best/api/sheets/2ac89502-af3e-4874-9292-eaf4a1d9c6b8/tabs/_GamesP_2023/id/${id}`);
     }
 
-    getHeroePorId(id:string):Observable<Heroe>{
-      return this.http.get<Heroe>(`${this.baseUrl}/games2023/${id}`);
+    postAgregarGame(heroe:Heroe):Observable<Heroe>{
+      return this.http.post<Heroe>(`https://sheet.best/api/sheets/2ac89502-af3e-4874-9292-eaf4a1d9c6b8/tabs/_GamesP_2023`, heroe);
     }
+
+    patchActualizarGame(heroe:Heroe):Observable<Heroe>{
+      return this.http.put<Heroe>(`https://sheet.best/api/sheets/2ac89502-af3e-4874-9292-eaf4a1d9c6b8/tabs/_GamesP_2023/id/${heroe.id}`, heroe);
+    }
+
+    DeleteGame(id:string):Observable<any>{
+      return this.http.delete<any>(`https://sheet.best/api/sheets/2ac89502-af3e-4874-9292-eaf4a1d9c6b8/tabs/_GamesP_2023/id/${id}`);
+    }
+
 
     getSugerencias(termino:string):Observable<Heroe[]>{
-      return this.http.get<Heroe[]>(`${this.baseUrl}/games2023?q=${termino}&_limit=6`);
+      return this.http.get<Heroe[]>(`https://sheet.best/api/sheets/2ac89502-af3e-4874-9292-eaf4a1d9c6b8/tabs/_GamesP_2023/search?title=${termino}*`);
     }
 
-    postAgregarHeroe(heroe:Heroe):Observable<Heroe>{
-      return this.http.post<Heroe>(`${this.baseUrl}/games2023`, heroe);
-    }
+    // Graph 2023
 
-    patchActualizarHeroe(heroe:Heroe):Observable<Heroe>{
-      return this.http.put<Heroe>(`${this.baseUrl}/games2023/${heroe.id}`, heroe);
+    getGraph():Observable<Graph[]>{
+      return this.http.get<Graph[]>(`https://sheet.best/api/sheets/2ac89502-af3e-4874-9292-eaf4a1d9c6b8/tabs/_Graph2023`);
     }
-
-    DeleteHeroe(id:string):Observable<any>{
-      return this.http.delete<any>(`${this.baseUrl}/games2023/${id}`);
-    }
-
 
     // Movies Sheet
 
-    getSheetMovie():Observable<Movie[]>{
+    getSheetMovies():Observable<Movie[]>{
       return this.http.get<Movie[]>(`https://sheet.best/api/sheets/2ac89502-af3e-4874-9292-eaf4a1d9c6b8/tabs/_MoviesL_2023`);
     }
 
@@ -56,7 +60,7 @@ export class HeroesService {
       return this.http.get<Movie[]>(`https://sheet.best/api/sheets/2ac89502-af3e-4874-9292-eaf4a1d9c6b8/tabs/_MoviesL_2023/id/${id}`);
     }
 
-    postAgregarMvoie(movie:Movie):Observable<Movie>{
+    postAgregarMovie(movie:Movie):Observable<Movie>{
       return this.http.post<Movie>(`https://sheet.best/api/sheets/2ac89502-af3e-4874-9292-eaf4a1d9c6b8/tabs/_MoviesL_2023`, movie);
     }
 

@@ -35,9 +35,9 @@ export class HeroeComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params
     .pipe(
-      switchMap( ({ id }) => this.heroesService.getHeroePorId(id))
+      switchMap( ({ id }) => this.heroesService.getGamePorId(id))
     )
-     .subscribe ( heroe => this.heroe = heroe);
+     .subscribe ( (heroe: Heroe[]) => this.heroe = heroe[0]);
   }
 
   regresar(){
