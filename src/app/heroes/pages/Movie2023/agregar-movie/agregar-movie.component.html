@@ -67,6 +67,11 @@
                     </button>
 
                     <span class="spacer"></span>
+
+                    <button mat-raised-button color="warn" (click)="borrarMovie()" *ngIf="movie.id">
+                        <mat-icon>remove</mat-icon>
+                        Borrar
+                    </button>
                 </div>
 
             </div>

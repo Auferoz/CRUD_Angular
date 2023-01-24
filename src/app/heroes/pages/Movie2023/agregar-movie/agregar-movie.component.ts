@@ -65,6 +65,15 @@ export class AgregarMovieComponent implements OnInit{
     }
 
   }
+
+  borrarMovie(){
+
+    this.heroesService.DeleteMovie( this.movie.id! )
+      .subscribe( movie => {
+        this.router.navigate(['/heroes/Movies2023']);
+        console.log('delete...', movie);
+      });
+  }
   
   regresar(){
     this.router.navigate(['/heroes/Movies2023']);

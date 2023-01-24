@@ -46,7 +46,7 @@ export class HeroesService {
     }
 
 
-      // Movies Sheet
+    // Movies Sheet
 
     getSheetMovie():Observable<Movie[]>{
       return this.http.get<Movie[]>(`https://sheet.best/api/sheets/2ac89502-af3e-4874-9292-eaf4a1d9c6b8/tabs/_MoviesL_2023`);
@@ -62,6 +62,10 @@ export class HeroesService {
 
     patchActualizarMovie(movie:Movie):Observable<Movie>{
       return this.http.put<Movie>(`https://sheet.best/api/sheets/2ac89502-af3e-4874-9292-eaf4a1d9c6b8/tabs/_MoviesL_2023/id/${movie.id}`, movie);
+    }
+
+    DeleteMovie(id:string):Observable<any>{
+      return this.http.delete<any>(`https://sheet.best/api/sheets/2ac89502-af3e-4874-9292-eaf4a1d9c6b8/tabs/_MoviesL_2023/id/${id}`);
     }
 
 }
