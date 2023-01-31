@@ -26,6 +26,13 @@
             </a>
 
             <mat-divider></mat-divider>
+            
+            <!-- <a routerLink="./listado2022" mat-list-item (click)="sidenav.toggle()">
+                <mat-icon matListItemIcon>label</mat-icon>
+                <span>Juegos del 2022</span>
+            </a> -->
+
+            <mat-divider></mat-divider>
 
             <a routerLink="./Movies2023" mat-list-item (click)="sidenav.toggle()">
                 <mat-icon matListItemIcon>label</mat-icon>
@@ -38,11 +45,15 @@
         </mat-nav-list>
 
     </mat-sidenav>
-    
+     
     <mat-toolbar>
         <button mat-icon-button (click)="sidenav.toggle()">
             <mat-icon>menu</mat-icon>
         </button>
+
+            <span class="spacer"></span>
+
+                <h1 class="col-title text-white">BURST</h1>
 
             <span class="spacer"></span>
         

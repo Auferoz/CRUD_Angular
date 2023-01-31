@@ -1,8 +1,12 @@
 <section class="container mt-5">
 
+    <div class="page-header mb-5">
+        <h1 class="page-heading text-white fw-light fs-2">Games played 2023</h1>
+    </div>
+
     <div class="row">
-        <div class="col-6 col-sm-6 col-lg-2 mb-4" *ngFor="let graph of graphs">
-            <div class="card h-100 pe-true border">
+        <div class="col-6 col-sm-6 col-lg-2 mb-5" *ngFor="let graph of graphs">
+            <div class="card h-100 pe-true border border-white">
                 <div class="card-body pb-2 p-2 p-md-3">
                     <div class="d-flex align-items-center justify-content-between">
                         <div>
@@ -17,7 +21,7 @@
                 <div class="card-footer p-3 bg-{{graph.color}}-light">
                     <div class="row d-flex align-items-between text-{{graph.color}}">
                         <div class="col-9">
-                            <p class="mb-0 h6">{{graph.percent}} %</p>
+                            <p class="mb-0 h6 fw-light">{{graph.percent}} %</p>
                         </div>
                         <div class="col-3">
                             <i class="fas fa-caret-up"></i>
@@ -26,15 +30,11 @@
                 </div>
             </div>
         </div>
-        
-        <mat-divider></mat-divider>
-        <br>
     </div>
+        
+    <hr class="hrWhite mb-5">
 
     <div class="row">
-        <h1>Jugados en 2023</h1>
-        <mat-divider></mat-divider>
-        <br>
         <div class="col-6 col-md-3 col-lg-2 mb-4" *ngFor="let heroe of heroes">
             <app-heroe-tarjeta [heroe]="heroe"></app-heroe-tarjeta>
         </div>

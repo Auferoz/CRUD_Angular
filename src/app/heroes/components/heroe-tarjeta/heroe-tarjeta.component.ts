@@ -14,4 +14,10 @@ export class HeroeTarjetaComponent {
 
   @Input() heroe!: Heroe
 
+  anyPercent(){
+    const ttl = parseFloat(this.heroe.achievements_ttl);
+    const obt = parseFloat(this.heroe.achievements_obt);
+    return (obt * 100 )/ttl;
+  }
+
 }

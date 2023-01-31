@@ -4,14 +4,18 @@
         <a [routerLink]="['/heroes', heroe.id]">
             <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
         </a>
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-{{heroe.color}}" role="progressbar" aria-valuenow="heroe.any"
+                aria-valuemin="0" aria-valuemax="100" [style]="'width:' + heroe.any + '%;'"></div>
+        </div>
     </div>
 
-    <div class="card-header text-truncate p-2 border-bottom">{{heroe.title}}</div>
+    <div class="card-header text-truncate px-2 py-1">{{heroe.title}}</div>
 
-    <div class="card-footer d-flex justify-content-center align-items-center border-top p-2">
+    <!-- <div class="card-footer d-flex justify-content-center align-items-center border-top p-2">
         <button type="button" class="btn btn-primary w-100 p-2 me-2" [routerLink]="['/heroes', heroe.id]">Ver</button>
         <button type="button" class="btn btn-danger w-100 p-2" [routerLink]="['/heroes/editar', heroe.id]">Editar</button>
-    </div>
+    </div> -->
 </div>
 
 <!-- <mat-card>

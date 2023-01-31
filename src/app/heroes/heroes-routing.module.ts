@@ -15,6 +15,7 @@ const rutas: Routes = [
     component: HomeComponent,
     children: [
     {path: 'listado', component: ListadoComponent},
+    {path: 'listado2022', component: ListadoComponent},
     {path: 'agregar', component: AgregarComponent},
     {path: 'editar/:id', component: AgregarComponent},
     {path: 'buscar', component: BuscarComponent},

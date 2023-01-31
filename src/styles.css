@@ -2,11 +2,57 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Sofia Sans', sans-serif; }
-
+@font-face {
+    font-family: 'AldotheApache';
+    src: url("../src/assets/font/aldo_the_apache/AldotheApache.woff");
+}
+.col-title {
+    text-align: center !important;
+    font-size: 3rem !important;
+    font-weight: bold !important;
+    font-family: 'Aldotheapache' !important;
+    text-shadow: 1px 1px 5px rgb(77 77 77) !important;
+    margin: 0px !important;
+}
 .spacer {
     flex: 1 1 auto;
 }
-
+.subtitle {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+.page-heading {
+    text-transform: uppercase !important;
+    letter-spacing: 0.2em !important;
+    font-weight: 300 !important;
+}
+.hrWhite{
+  border-top: 2px dashed white;
+}
 .bg-42{
     background-color:#424242;
+}
+.bg-dark-light {
+    background-color: #d6d8d9;
+}
+.bg-danger-light {
+    background-color: #f8d7da;
+}
+.bg-primary-light {
+    background-color: #dadcf8;
+}
+.bg-warning-light {
+    background-color: #fff3cd;
+}
+.bg-info-light {
+    background-color: #d1ecf1;
+}
+@media (min-width: 1200px) {
+    .container{
+        max-width: 1600px;
+        
+        padding-right: 3rem !important;
+        padding-left: 3rem !important;
+    }
 }

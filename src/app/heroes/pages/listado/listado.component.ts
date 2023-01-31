@@ -6,8 +6,8 @@ import { Graph } from '../../interfaces/graphs.interface';
 @Component({
   selector: 'app-listado',
   templateUrl: './listado.component.html',
-  styles: [
-  ]
+  styles: [`
+  `]
 })
 export class ListadoComponent implements OnInit {
 

@@ -17,6 +17,12 @@ export class HeroesService {
     private http: HttpClient
   ) { }
 
+    // Games 2022 
+      
+    getSheetGames2022():Observable<Heroe[]>{
+      return this.http.get<Heroe[]>(`https://sheet.best/api/sheets/2ac89502-af3e-4874-9292-eaf4a1d9c6b8/tabs/_GamesP_2022`);
+    }
+
     // Games 2023 
     
     getSheetGames():Observable<Heroe[]>{
