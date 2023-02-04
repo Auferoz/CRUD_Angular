@@ -1,0 +1,14 @@
+<section class="p-3">
+    <h1 class="text-white">¿Estas Seguro?</h1>
+    <hr>
+    <p class="text-white">
+        Estas a punto de borrar a {{ data.title }}
+        <br>
+        ¿Desea continuar?
+    </p>
+
+    <div>
+        <button mat-raised-button (click)="borrar()" color="warn">Si, borrar</button>
+        <button mat-raised-button (click)="cerrar()" color="basic" class="ms-3 text-white">No</button>
+    </div>
+</section>

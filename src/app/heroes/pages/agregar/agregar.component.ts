@@ -5,6 +5,8 @@ import { switchMap } from 'rxjs/operators';
 
 import { Heroe } from '../../interfaces/heroes.interface';
 import { HeroesService } from '../../services/heroes.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmarComponent } from '../../components/confirmar/confirmar.component';
 
 @Component({
   selector: 'app-agregar',
@@ -41,6 +43,14 @@ export class AgregarComponent implements OnInit {
     {id:'fa-solid fa-computer', desc:'PC'},
   ];
 
+  status = [
+    {id:'abandoned', desc:'ABANDONED'},
+    {id:'active', desc:'ACTIVE'},
+    {id:'inactive', desc:'INACTIVE'},
+    {id:'main story', desc:'MAIN STORY'},
+    {id:'completed', desc:'COMPLETED'},
+  ];
+
   heroe: Heroe = {
     id: '',
     title: '',
@@ -72,7 +82,8 @@ export class AgregarComponent implements OnInit {
     private heroesService: HeroesService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    public dialog: MatDialog
   ){}
 
   ngOnInit(): void {
@@ -110,10 +121,23 @@ export class AgregarComponent implements OnInit {
 
   borrarHeroe(){
 
-    this.heroesService.DeleteGame( this.heroe.id! )
-      .subscribe( resp => {
-        this.router.navigate(['/heroes']);
-      });
+    const dialog = this.dialog.open(ConfirmarComponent, {
+      width: '250px',
+      data: { ...this.heroe }
+    });
+
+    dialog.afterClosed().subscribe(
+      (resp => {
+        if(resp){
+            this.heroesService.DeleteGame( this.heroe.id! )
+              .subscribe( resp => {
+                this.router.navigate(['/heroes']);
+              });
+        }
+      })
+    )
+
+
   }
 
   mostrarSnalkbar(mensaje: string){

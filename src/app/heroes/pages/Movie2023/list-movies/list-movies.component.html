@@ -1,11 +1,23 @@
 <section>
     <div class="container p-5">
+
+        <div class="page-header mb-5">
+            <h1 class="page-heading text-white fw-light fs-2">Movies 2023
+    
+                <a mat-raised-button color="accent" class="me-3" routerLink="../agregar/movie">
+                    <mat-icon>add</mat-icon>
+                    Add
+                </a>
+    
+            </h1>
+        </div>
+        
         <div class="row">
-            <div class="col-12">
-                <h1>Movies 2023</h1>
-            </div>
             <div class="col-6 col-md-2 mb-3" *ngFor="let sheet of sheets">
                 <div class="card border bg-42 pointer" [routerLink]="['/heroes/Movies2023', sheet.id]">
+                    <div style="position:absolute;top:10px;left:10px;">
+                        <span class="badge badge-dark">{{'0'+sheet.rating}} <i class="fa-solid fa-trophy"></i></span>
+                    </div>
                     <img src="{{sheet.poster}}" class="card-img-top img-fluid min-450" alt="{{sheet.title}}"/>
                     <div class="card-body p-2">
                         <h2 class="card-title text-truncate m-0">{{sheet.title}}</h2>

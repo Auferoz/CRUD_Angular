@@ -17,6 +17,7 @@ import { ImagenPipe } from './pipes/imagen.pipe';
 import { ListMoviesComponent } from './pages/Movie2023/list-movies/list-movies.component';
 import { VerMovieComponent } from './pages/Movie2023/ver-movie/ver-movie.component';
 import { AgregarMovieComponent } from './pages/Movie2023/agregar-movie/agregar-movie.component';
+import { ConfirmarComponent } from './components/confirmar/confirmar.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { AgregarMovieComponent } from './pages/Movie2023/agregar-movie/agregar-m
     ImagenPipe,
     ListMoviesComponent,
     VerMovieComponent,
-    AgregarMovieComponent
+    AgregarMovieComponent,
+    ConfirmarComponent
   ],
   imports: [
     CommonModule,
