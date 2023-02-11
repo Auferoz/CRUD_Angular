@@ -15,8 +15,9 @@
         <div class="row">
             <div class="col-6 col-md-2 mb-3" *ngFor="let sheet of sheets">
                 <div class="card border bg-42 pointer" [routerLink]="['/heroes/Movies2023', sheet.id]">
-                    <div style="position:absolute;top:10px;left:10px;">
-                        <span class="badge badge-dark">{{'0'+sheet.rating}} <i class="fa-solid fa-trophy"></i></span>
+                    <div class="d-flex justify-content-between w-100 p-2" style="position:absolute;">
+                        <span class="badge badge-dark border">{{'0'+sheet.rating}} <i class="fa-solid fa-trophy"></i></span>
+                        <span class="badge badge-dark border">{{sheet.watch}} <i class="fa-solid fa-film"></i></span>
                     </div>
                     <img src="{{sheet.poster}}" class="card-img-top img-fluid min-450" alt="{{sheet.title}}"/>
                     <div class="card-body p-2">

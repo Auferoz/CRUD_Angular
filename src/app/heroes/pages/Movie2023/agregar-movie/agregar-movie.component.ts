@@ -19,10 +19,15 @@ export class AgregarMovieComponent implements OnInit{
     runtime:  '',
     genre:    '',
     rating:   '',
+    watch:    '',
     view:     '',
     poster:   '',
     image:    '',
   }
+
+  icon_netflix = '';
+  icon_hbo =     '';
+  icon_cine =    '';
 
   constructor(
     private heroesService: HeroesService,
