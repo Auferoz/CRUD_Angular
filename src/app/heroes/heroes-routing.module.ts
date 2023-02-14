@@ -8,6 +8,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ListMoviesComponent } from './pages/Movie2023/list-movies/list-movies.component';
 import { VerMovieComponent } from './pages/Movie2023/ver-movie/ver-movie.component';
 import { AgregarMovieComponent } from './pages/Movie2023/agregar-movie/agregar-movie.component';
+import { ListMovies2022Component } from './pages/Movie2022/list-movies2022/list-movies2022.component';
 
 const rutas: Routes = [
   {
@@ -15,14 +16,17 @@ const rutas: Routes = [
     component: HomeComponent,
     children: [
     {path: 'listado', component: ListadoComponent},
-    {path: 'listado2022', component: ListadoComponent},
     {path: 'agregar', component: AgregarComponent},
     {path: 'editar/:id', component: AgregarComponent},
     {path: 'buscar', component: BuscarComponent},
+
+    {path: 'Movies2022', component: ListMovies2022Component},
+
     {path: 'Movies2023', component: ListMoviesComponent},
     {path: 'Movies2023/:id', component: VerMovieComponent},
     {path: 'agregar/movie', component: AgregarMovieComponent},
     {path: 'editar/movie/:id', component: AgregarMovieComponent},
+    
     {path: ':id', component: HeroeComponent},
     {path: '**', redirectTo: 'listado'},
   ]}

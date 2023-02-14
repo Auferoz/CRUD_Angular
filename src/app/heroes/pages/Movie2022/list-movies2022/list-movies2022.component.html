@@ -1,0 +1,28 @@
+<section>
+    <div class="container p-5">
+
+        <div class="page-header mb-5">
+            <h1 class="page-heading text-white fw-light fs-2">Movies 2022
+            </h1>
+        </div>
+
+        <div class="row">
+            <div class="col-6 col-md-2 mb-3" *ngFor="let sheet of sheets">
+                <div class="card border">
+                    <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                        <div style="position:absolute;top:10px;left:10px;">
+                            <span class="badge badge-dark">{{'0'+sheet.rating}} <i class="fa-solid fa-trophy"></i></span>
+                        </div>
+                        <img src="{{sheet.poster}}" class="img-fluid img-poster-movie" />
+                        <a>
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                        </a>
+                    </div>
+                    <div class="card-body bg-dark p-1">
+                        <h1 class="card-title text-truncate m-0">{{sheet.title}}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

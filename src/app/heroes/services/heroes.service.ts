@@ -56,7 +56,13 @@ export class HeroesService {
       return this.http.get<Graph[]>(`https://sheet.best/api/sheets/2ac89502-af3e-4874-9292-eaf4a1d9c6b8/tabs/_Graph2023`);
     }
 
-    // Movies Sheet
+    // Movies Sheet 2022
+      
+    getSheetMovies2022():Observable<Movie[]>{
+      return this.http.get<Movie[]>(`https://sheet.best/api/sheets/2ac89502-af3e-4874-9292-eaf4a1d9c6b8/tabs/_MoviesL_2022`);
+    }
+
+    // Movies Sheet 2023
 
     getSheetMovies():Observable<Movie[]>{
       return this.http.get<Movie[]>(`https://sheet.best/api/sheets/2ac89502-af3e-4874-9292-eaf4a1d9c6b8/tabs/_MoviesL_2023`);
