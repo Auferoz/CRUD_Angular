@@ -19,6 +19,7 @@ export class AgregarMovieComponent implements OnInit{
     runtime:  '',
     genre:    '',
     rating:   '',
+    watch:    '',
     view:     '',
     poster:   '',
     image:    '',

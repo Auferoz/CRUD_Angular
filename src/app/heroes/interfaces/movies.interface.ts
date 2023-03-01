@@ -5,6 +5,7 @@ export interface Movie {
     runtime:  string;
     genre:    string;
     rating:   string;
+    watch:    string;
     view:     string;
     poster:   string;
     image:    string;

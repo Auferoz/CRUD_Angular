@@ -16,11 +16,13 @@
             <div class="col-6 col-md-2 mb-3" *ngFor="let sheet of sheets">
                 <div class="card border bg-42 pointer" [routerLink]="['/heroes/Movies2023', sheet.id]">
                     <div style="position:absolute;top:10px;left:10px;">
-                        <span class="badge badge-dark">{{'0'+sheet.rating}} <i class="fa-solid fa-trophy"></i></span>
+                        <span class="badge badge-dark me-1">{{sheet.watch}} <i class="fa-solid fa-calendar-day"></i></span>
+                        <span class="badge badge-dark me-1">{{sheet.view}} <i class="fa-solid fa-tv"></i></span>
+                        <span class="badge badge-dark ">{{'0'+sheet.rating}} <i class="fa-solid fa-trophy"></i></span>
                     </div>
                     <img src="{{sheet.poster}}" class="card-img-top img-fluid min-450" alt="{{sheet.title}}"/>
-                    <div class="card-body p-2">
-                        <h2 class="card-title text-truncate m-0">{{sheet.title}}</h2>
+                    <div class="card-body bg-dark p-1">
+                        <h1 class="card-title text-truncate m-0">{{sheet.title}}</h1>
                     </div>
                 </div>
             </div>
